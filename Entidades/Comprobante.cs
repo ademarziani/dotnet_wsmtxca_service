@@ -40,6 +40,7 @@ namespace WSMTXCA_SRV.Entidades
         public decimal impOtroTributos;
         public decimal impTotal;
         public decimal pesoTotal;
+        public PeriodoComprobanteAsociado periodosAsociados;
 
         public List<Detalle> detalles;
         public List<OtrosTributo> otrosTributos;
@@ -81,6 +82,11 @@ namespace WSMTXCA_SRV.Entidades
             comprobantesAsociados.Add(compAsoc);
         }
 
+        public void setPeriodoAsociado(PeriodoComprobanteAsociado periodoAsoc)
+        {
+            this.periodosAsociados = periodoAsoc;
+        }
+
         public MTXCA.ItemType[] getItems()
         {
             List<MTXCA.ItemType> auxItems = new List<MTXCA.ItemType>();
@@ -106,6 +112,7 @@ namespace WSMTXCA_SRV.Entidades
                     precioUnitario = IT.precio,
                     precioUnitarioSpecified = true,
                     importeBonificacion = IT.bonif,
+                    importeBonificacionSpecified = IT.bonifSpec == "S",
                     codigoCondicionIVA = IT.codIva,
                     importeIVA = IT.importeIva,
                     importeIVASpecified = informaIVA,

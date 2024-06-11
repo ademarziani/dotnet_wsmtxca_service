@@ -6,6 +6,7 @@ using System.ServiceModel;
 using WSMTXCA_SRV.Entidades;
 using System.Globalization;
 using System.IO;
+using Org.BouncyCastle.Asn1.Cmp;
 
 namespace WSMTXCA_SRV.Util
 {
@@ -102,11 +103,11 @@ namespace WSMTXCA_SRV.Util
                         numeroDocumento = comprobante.sujeto.nrodoc,
                         numeroDocumentoSpecified = true,
                         importeGravado = comprobante.impGravado,
-                        importeGravadoSpecified = comprobante.impGravado != 0,
+                        importeGravadoSpecified = true,
                         importeNoGravado = comprobante.impNoGravado,
-                        importeNoGravadoSpecified = comprobante.impNoGravado != 0,
+                        importeNoGravadoSpecified = true,
                         importeExento = comprobante.impExento,
-                        importeExentoSpecified = comprobante.impExento != 0,
+                        importeExentoSpecified = true,
                         importeSubtotal = comprobante.impSubTotal,
                         importeOtrosTributos = comprobante.impOtroTributos,
                         importeOtrosTributosSpecified = comprobante.impOtroTributos != 0,
@@ -144,6 +145,15 @@ namespace WSMTXCA_SRV.Util
                     if (compAsociados.Count() > 0)
                     {
                         compEnvio.arrayComprobantesAsociados = compAsociados;
+                    }
+
+                    if (comprobante.periodosAsociados != null)
+                    {
+                        compEnvio.periodoComprobantesAsociados = new MTXCA.PeriodoComprobantesAsociadosType()
+                        {
+                            fechaDesde = comprobante.periodosAsociados.desde,
+                            fechaHasta = comprobante.periodosAsociados.hasta
+                        };
                     }
 
                     resultadoComprobante = service.autorizarComprobante(auth, compEnvio, out comprobanteResponse, out arrayObservaciones, out arrayErrores, out evento);

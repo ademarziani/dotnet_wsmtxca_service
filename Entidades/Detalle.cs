@@ -15,6 +15,7 @@ namespace WSMTXCA_SRV.Entidades
         public decimal precio { get; set; }
         public decimal porcBonif { get; set; }
         public decimal bonif { get; set; }
+        public string bonifSpec { get; set; }
         public short codIva { get; set; }
         public decimal importeIva { get; set; }
         public decimal totalItem { get; set; }

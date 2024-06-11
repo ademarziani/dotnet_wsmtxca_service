@@ -12,7 +12,7 @@ namespace WSMTXCA_SRV.MTXCA {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47,31 +47,42 @@ namespace WSMTXCA_SRV.MTXCA {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/", ConfigurationName="MTXCA.MTXCAServicePortType")]
     public interface MTXCAServicePortType {
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que la operación dummy no es RPC ni está encapsulada en un documento.
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/dummy", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/dummy", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.dummyResponse dummy(WSMTXCA_SRV.MTXCA.dummyRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (autorizarComprobanteRequest) del mensaje autorizarComprobanteRequest no coincide con el valor predeterminado (autorizarComprobante)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/dummy", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.dummyResponse> dummyAsync(WSMTXCA_SRV.MTXCA.dummyRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/autorizarComprobante", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/autorizarComprobante", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.autorizarComprobanteResponse autorizarComprobante(WSMTXCA_SRV.MTXCA.autorizarComprobanteRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (solicitarCAEARequest) del mensaje solicitarCAEARequest no coincide con el valor predeterminado (solicitarCAEA)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/autorizarComprobante", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.autorizarComprobanteResponse> autorizarComprobanteAsync(WSMTXCA_SRV.MTXCA.autorizarComprobanteRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/solicitarCAEA", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/solicitarCAEA", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.solicitarCAEAResponse solicitarCAEA(WSMTXCA_SRV.MTXCA.solicitarCAEARequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (informarComprobanteCAEARequest) del mensaje informarComprobanteCAEARequest no coincide con el valor predeterminado (informarComprobanteCAEA)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/solicitarCAEA", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.solicitarCAEAResponse> solicitarCAEAAsync(WSMTXCA_SRV.MTXCA.solicitarCAEARequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarComprobanteCAEA", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarComprobanteCAEA", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.informarComprobanteCAEAResponse informarComprobanteCAEA(WSMTXCA_SRV.MTXCA.informarComprobanteCAEARequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarUltimoComprobanteAutorizadoRequest) del mensaje consultarUltimoComprobanteAutorizadoRequest no coincide con el valor predeterminado (consultarUltimoComprobanteAutorizado)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarComprobanteCAEA", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.informarComprobanteCAEAResponse> informarComprobanteCAEAAsync(WSMTXCA_SRV.MTXCA.informarComprobanteCAEARequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarUltimoComprobanteAutoriz" +
             "ado", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarUltimoComprobanteAutoriz" +
@@ -79,130 +90,203 @@ namespace WSMTXCA_SRV.MTXCA {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarUltimoComprobanteAutorizadoResponse consultarUltimoComprobanteAutorizado(WSMTXCA_SRV.MTXCA.consultarUltimoComprobanteAutorizadoRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarComprobanteRequest) del mensaje consultarComprobanteRequest no coincide con el valor predeterminado (consultarComprobante)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarUltimoComprobanteAutoriz" +
+            "ado", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarUltimoComprobanteAutorizadoResponse> consultarUltimoComprobanteAutorizadoAsync(WSMTXCA_SRV.MTXCA.consultarUltimoComprobanteAutorizadoRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarComprobante", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarComprobante", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarComprobanteResponse consultarComprobante(WSMTXCA_SRV.MTXCA.consultarComprobanteRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarTiposComprobanteRequest) del mensaje consultarTiposComprobanteRequest no coincide con el valor predeterminado (consultarTiposComprobante)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarComprobante", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarComprobanteResponse> consultarComprobanteAsync(WSMTXCA_SRV.MTXCA.consultarComprobanteRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposComprobante", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposComprobante", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarTiposComprobanteResponse consultarTiposComprobante(WSMTXCA_SRV.MTXCA.consultarTiposComprobanteRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarTiposDocumentoRequest) del mensaje consultarTiposDocumentoRequest no coincide con el valor predeterminado (consultarTiposDocumento)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposComprobante", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarTiposComprobanteResponse> consultarTiposComprobanteAsync(WSMTXCA_SRV.MTXCA.consultarTiposComprobanteRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposDocumento", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposDocumento", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarTiposDocumentoResponse consultarTiposDocumento(WSMTXCA_SRV.MTXCA.consultarTiposDocumentoRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarAlicuotasIVARequest) del mensaje consultarAlicuotasIVARequest no coincide con el valor predeterminado (consultarAlicuotasIVA)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposDocumento", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarTiposDocumentoResponse> consultarTiposDocumentoAsync(WSMTXCA_SRV.MTXCA.consultarTiposDocumentoRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarAlicuotasIVA", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarAlicuotasIVA", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarAlicuotasIVAResponse consultarAlicuotasIVA(WSMTXCA_SRV.MTXCA.consultarAlicuotasIVARequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarCondicionesIVARequest) del mensaje consultarCondicionesIVARequest no coincide con el valor predeterminado (consultarCondicionesIVA)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarAlicuotasIVA", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarAlicuotasIVAResponse> consultarAlicuotasIVAAsync(WSMTXCA_SRV.MTXCA.consultarAlicuotasIVARequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCondicionesIVA", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCondicionesIVA", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarCondicionesIVAResponse consultarCondicionesIVA(WSMTXCA_SRV.MTXCA.consultarCondicionesIVARequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarMonedasRequest) del mensaje consultarMonedasRequest no coincide con el valor predeterminado (consultarMonedas)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCondicionesIVA", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarCondicionesIVAResponse> consultarCondicionesIVAAsync(WSMTXCA_SRV.MTXCA.consultarCondicionesIVARequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarMonedas", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarMonedas", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarMonedasResponse consultarMonedas(WSMTXCA_SRV.MTXCA.consultarMonedasRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarCotizacionMonedaRequest) del mensaje consultarCotizacionMonedaRequest no coincide con el valor predeterminado (consultarCotizacionMoneda)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarMonedas", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarMonedasResponse> consultarMonedasAsync(WSMTXCA_SRV.MTXCA.consultarMonedasRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCotizacionMoneda", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCotizacionMoneda", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarCotizacionMonedaResponse consultarCotizacionMoneda(WSMTXCA_SRV.MTXCA.consultarCotizacionMonedaRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarUnidadesMedidaRequest) del mensaje consultarUnidadesMedidaRequest no coincide con el valor predeterminado (consultarUnidadesMedida)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCotizacionMoneda", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarCotizacionMonedaResponse> consultarCotizacionMonedaAsync(WSMTXCA_SRV.MTXCA.consultarCotizacionMonedaRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarUnidadesMedida", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarUnidadesMedida", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarUnidadesMedidaResponse consultarUnidadesMedida(WSMTXCA_SRV.MTXCA.consultarUnidadesMedidaRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarTiposTributoRequest) del mensaje consultarTiposTributoRequest no coincide con el valor predeterminado (consultarTiposTributo)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarUnidadesMedida", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarUnidadesMedidaResponse> consultarUnidadesMedidaAsync(WSMTXCA_SRV.MTXCA.consultarUnidadesMedidaRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposTributo", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposTributo", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarTiposTributoResponse consultarTiposTributo(WSMTXCA_SRV.MTXCA.consultarTiposTributoRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarPuntosVentaRequest) del mensaje consultarPuntosVentaRequest no coincide con el valor predeterminado (consultarPuntosVenta)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposTributo", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarTiposTributoResponse> consultarTiposTributoAsync(WSMTXCA_SRV.MTXCA.consultarTiposTributoRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPuntosVenta", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPuntosVenta", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarPuntosVentaResponse consultarPuntosVenta(WSMTXCA_SRV.MTXCA.consultarPuntosVentaRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarPuntosVentaCAERequest) del mensaje consultarPuntosVentaCAERequest no coincide con el valor predeterminado (consultarPuntosVentaCAE)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPuntosVenta", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarPuntosVentaResponse> consultarPuntosVentaAsync(WSMTXCA_SRV.MTXCA.consultarPuntosVentaRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPuntosVentaCAE", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPuntosVentaCAE", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEResponse consultarPuntosVentaCAE(WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAERequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarPuntosVentaCAEARequest) del mensaje consultarPuntosVentaCAEARequest no coincide con el valor predeterminado (consultarPuntosVentaCAEA)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPuntosVentaCAE", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEResponse> consultarPuntosVentaCAEAsync(WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAERequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPuntosVentaCAEA", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPuntosVentaCAEA", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEAResponse consultarPuntosVentaCAEA(WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEARequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (informarCAEANoUtilizadoRequest) del mensaje informarCAEANoUtilizadoRequest no coincide con el valor predeterminado (informarCAEANoUtilizado)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPuntosVentaCAEA", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEAResponse> consultarPuntosVentaCAEAAsync(WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEARequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarCAEANoUtilizado", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarCAEANoUtilizado", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoResponse informarCAEANoUtilizado(WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (informarCAEANoUtilizadoPtoVtaRequest) del mensaje informarCAEANoUtilizadoPtoVtaRequest no coincide con el valor predeterminado (informarCAEANoUtilizadoPtoVta)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarCAEANoUtilizado", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoResponse> informarCAEANoUtilizadoAsync(WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarCAEANoUtilizadoPtoVta", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarCAEANoUtilizadoPtoVta", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoPtoVtaResponse informarCAEANoUtilizadoPtoVta(WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoPtoVtaRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarPtosVtaCAEANoInformadosRequest) del mensaje consultarPtosVtaCAEANoInformadosRequest no coincide con el valor predeterminado (consultarPtosVtaCAEANoInformados)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarCAEANoUtilizadoPtoVta", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoPtoVtaResponse> informarCAEANoUtilizadoPtoVtaAsync(WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoPtoVtaRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPtosVtaCAEANoInformados", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPtosVtaCAEANoInformados", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarPtosVtaCAEANoInformadosResponse consultarPtosVtaCAEANoInformados(WSMTXCA_SRV.MTXCA.consultarPtosVtaCAEANoInformadosRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarCAEARequest) del mensaje consultarCAEARequest no coincide con el valor predeterminado (consultarCAEA)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarPtosVtaCAEANoInformados", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarPtosVtaCAEANoInformadosResponse> consultarPtosVtaCAEANoInformadosAsync(WSMTXCA_SRV.MTXCA.consultarPtosVtaCAEANoInformadosRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCAEA", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCAEA", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarCAEAResponse consultarCAEA(WSMTXCA_SRV.MTXCA.consultarCAEARequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarCAEAEntreFechasRequest) del mensaje consultarCAEAEntreFechasRequest no coincide con el valor predeterminado (consultarCAEAEntreFechas)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCAEA", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarCAEAResponse> consultarCAEAAsync(WSMTXCA_SRV.MTXCA.consultarCAEARequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCAEAEntreFechas", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCAEAEntreFechas", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarCAEAEntreFechasResponse consultarCAEAEntreFechas(WSMTXCA_SRV.MTXCA.consultarCAEAEntreFechasRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (autorizarAjusteIVARequest) del mensaje autorizarAjusteIVARequest no coincide con el valor predeterminado (autorizarAjusteIVA)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCAEAEntreFechas", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarCAEAEntreFechasResponse> consultarCAEAEntreFechasAsync(WSMTXCA_SRV.MTXCA.consultarCAEAEntreFechasRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/autorizarAjusteIVA", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/autorizarAjusteIVA", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.autorizarAjusteIVAResponse autorizarAjusteIVA(WSMTXCA_SRV.MTXCA.autorizarAjusteIVARequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (informarAjusteIVACAEARequest) del mensaje informarAjusteIVACAEARequest no coincide con el valor predeterminado (informarAjusteIVACAEA)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/autorizarAjusteIVA", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.autorizarAjusteIVAResponse> autorizarAjusteIVAAsync(WSMTXCA_SRV.MTXCA.autorizarAjusteIVARequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarAjusteIVACAEA", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarAjusteIVACAEA", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.informarAjusteIVACAEAResponse informarAjusteIVACAEA(WSMTXCA_SRV.MTXCA.informarAjusteIVACAEARequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de contenedor (consultarTiposDatosAdicionalesRequest) del mensaje consultarTiposDatosAdicionalesRequest no coincide con el valor predeterminado (consultarTiposDatosAdicionales)
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/informarAjusteIVACAEA", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.informarAjusteIVACAEAResponse> informarAjusteIVACAEAAsync(WSMTXCA_SRV.MTXCA.informarAjusteIVACAEARequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposDatosAdicionales", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposDatosAdicionales", Name="exceptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSMTXCA_SRV.MTXCA.consultarTiposDatosAdicionalesResponse consultarTiposDatosAdicionales(WSMTXCA_SRV.MTXCA.consultarTiposDatosAdicionalesRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarTiposDatosAdicionales", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarTiposDatosAdicionalesResponse> consultarTiposDatosAdicionalesAsync(WSMTXCA_SRV.MTXCA.consultarTiposDatosAdicionalesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarActividadesVigentes", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarActividadesVigentes", Name="exceptionResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSMTXCA_SRV.MTXCA.consultarActividadesVigentesResponse consultarActividadesVigentes(WSMTXCA_SRV.MTXCA.consultarActividadesVigentesRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarActividadesVigentes", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarActividadesVigentesResponse> consultarActividadesVigentesAsync(WSMTXCA_SRV.MTXCA.consultarActividadesVigentesRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class dummyRequest {
         
@@ -212,7 +296,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="dummyResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class dummyResponse {
         
@@ -239,7 +322,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -299,7 +382,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -382,6 +465,8 @@ namespace WSMTXCA_SRV.MTXCA {
         
         private ComprobanteAsociadoType[] arrayComprobantesAsociadosField;
         
+        private PeriodoComprobantesAsociadosType periodoComprobantesAsociadosField;
+        
         private OtroTributoType[] arrayOtrosTributosField;
         
         private ItemType[] arrayItemsField;
@@ -391,6 +476,8 @@ namespace WSMTXCA_SRV.MTXCA {
         private DatoAdicionalType[] arrayDatosAdicionalesField;
         
         private CompradorType[] arrayCompradoresField;
+        
+        private ActividadType[] arrayActividadesField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
@@ -850,7 +937,19 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        public PeriodoComprobantesAsociadosType periodoComprobantesAsociados {
+            get {
+                return this.periodoComprobantesAsociadosField;
+            }
+            set {
+                this.periodoComprobantesAsociadosField = value;
+                this.RaisePropertyChanged("periodoComprobantesAsociados");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
         [System.Xml.Serialization.XmlArrayItemAttribute("otroTributo", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public OtroTributoType[] arrayOtrosTributos {
             get {
@@ -863,7 +962,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
         [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public ItemType[] arrayItems {
             get {
@@ -876,7 +975,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
         [System.Xml.Serialization.XmlArrayItemAttribute("subtotalIVA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public SubtotalIVAType[] arraySubtotalesIVA {
             get {
@@ -889,7 +988,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
         [System.Xml.Serialization.XmlArrayItemAttribute("datoAdicional", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public DatoAdicionalType[] arrayDatosAdicionales {
             get {
@@ -902,7 +1001,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
         [System.Xml.Serialization.XmlArrayItemAttribute("comprador", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public CompradorType[] arrayCompradores {
             get {
@@ -911,6 +1010,19 @@ namespace WSMTXCA_SRV.MTXCA {
             set {
                 this.arrayCompradoresField = value;
                 this.RaisePropertyChanged("arrayCompradores");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("actividad", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public ActividadType[] arrayActividades {
+            get {
+                return this.arrayActividadesField;
+            }
+            set {
+                this.arrayActividadesField = value;
+                this.RaisePropertyChanged("arrayActividades");
             }
         }
         
@@ -925,7 +1037,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/")]
     public enum CodigoTipoAutorizacionSimpleType {
@@ -938,7 +1050,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1054,7 +1166,53 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/")]
+    public partial class PeriodoComprobantesAsociadosType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.DateTime fechaDesdeField;
+        
+        private System.DateTime fechaHastaField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date", Order=0)]
+        public System.DateTime fechaDesde {
+            get {
+                return this.fechaDesdeField;
+            }
+            set {
+                this.fechaDesdeField = value;
+                this.RaisePropertyChanged("fechaDesde");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date", Order=1)]
+        public System.DateTime fechaHasta {
+            get {
+                return this.fechaHastaField;
+            }
+            set {
+                this.fechaHastaField = value;
+                this.RaisePropertyChanged("fechaHasta");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1128,7 +1286,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1370,7 +1528,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1416,7 +1574,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1532,7 +1690,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1592,7 +1750,39 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/")]
+    public partial class ActividadType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long codigoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public long codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+                this.RaisePropertyChanged("codigo");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/")]
     public enum ResultadoSimpleType {
@@ -1608,7 +1798,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1724,7 +1914,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1771,7 +1961,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="autorizarComprobanteRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class autorizarComprobanteRequest {
         
@@ -1794,7 +1983,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="autorizarComprobanteResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class autorizarComprobanteResponse {
         
@@ -1833,7 +2021,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1879,7 +2067,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2011,7 +2199,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="solicitarCAEARequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class solicitarCAEARequest {
         
@@ -2034,7 +2221,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="solicitarCAEAResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class solicitarCAEAResponse {
         
@@ -2062,7 +2248,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2137,7 +2323,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="informarComprobanteCAEARequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class informarComprobanteCAEARequest {
         
@@ -2160,7 +2345,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="informarComprobanteCAEAResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class informarComprobanteCAEAResponse {
         
@@ -2204,7 +2388,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2251,7 +2435,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarUltimoComprobanteAutorizadoRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarUltimoComprobanteAutorizadoRequest {
         
@@ -2274,7 +2457,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarUltimoComprobanteAutorizadoResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarUltimoComprobanteAutorizadoResponse {
         
@@ -2302,7 +2484,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2363,7 +2545,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarComprobanteRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarComprobanteRequest {
         
@@ -2386,7 +2567,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarComprobanteResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarComprobanteResponse {
         
@@ -2421,7 +2601,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarTiposComprobanteRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarTiposComprobanteRequest {
         
@@ -2439,7 +2618,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarTiposComprobanteResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarTiposComprobanteResponse {
         
@@ -2463,7 +2641,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarTiposDocumentoRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarTiposDocumentoRequest {
         
@@ -2481,7 +2658,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarTiposDocumentoResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarTiposDocumentoResponse {
         
@@ -2505,7 +2681,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarAlicuotasIVARequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarAlicuotasIVARequest {
         
@@ -2523,7 +2698,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarAlicuotasIVAResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarAlicuotasIVAResponse {
         
@@ -2547,7 +2721,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarCondicionesIVARequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarCondicionesIVARequest {
         
@@ -2565,7 +2738,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarCondicionesIVAResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarCondicionesIVAResponse {
         
@@ -2588,7 +2760,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2635,7 +2807,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarMonedasRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarMonedasRequest {
         
@@ -2653,7 +2824,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarMonedasResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarMonedasResponse {
         
@@ -2677,7 +2847,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarCotizacionMonedaRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarCotizacionMonedaRequest {
         
@@ -2700,7 +2869,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarCotizacionMonedaResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarCotizacionMonedaResponse {
         
@@ -2729,7 +2897,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarUnidadesMedidaRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarUnidadesMedidaRequest {
         
@@ -2747,7 +2914,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarUnidadesMedidaResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarUnidadesMedidaResponse {
         
@@ -2771,7 +2937,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarTiposTributoRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarTiposTributoRequest {
         
@@ -2789,7 +2954,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarTiposTributoResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarTiposTributoResponse {
         
@@ -2812,7 +2976,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2886,7 +3050,7 @@ namespace WSMTXCA_SRV.MTXCA {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/")]
     public enum SiNoSimpleType {
@@ -2900,7 +3064,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarPuntosVentaRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarPuntosVentaRequest {
         
@@ -2918,7 +3081,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarPuntosVentaResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarPuntosVentaResponse {
         
@@ -2942,7 +3104,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarPuntosVentaCAERequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarPuntosVentaCAERequest {
         
@@ -2960,7 +3121,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarPuntosVentaCAEResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarPuntosVentaCAEResponse {
         
@@ -2984,7 +3144,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarPuntosVentaCAEARequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarPuntosVentaCAEARequest {
         
@@ -3002,7 +3161,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarPuntosVentaCAEAResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarPuntosVentaCAEAResponse {
         
@@ -3026,7 +3184,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="informarCAEANoUtilizadoRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class informarCAEANoUtilizadoRequest {
         
@@ -3049,7 +3206,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="informarCAEANoUtilizadoResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class informarCAEANoUtilizadoResponse {
         
@@ -3088,7 +3244,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="informarCAEANoUtilizadoPtoVtaRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class informarCAEANoUtilizadoPtoVtaRequest {
         
@@ -3116,7 +3271,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="informarCAEANoUtilizadoPtoVtaResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class informarCAEANoUtilizadoPtoVtaResponse {
         
@@ -3160,7 +3314,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarPtosVtaCAEANoInformadosRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarPtosVtaCAEANoInformadosRequest {
         
@@ -3183,7 +3336,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarPtosVtaCAEANoInformadosResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarPtosVtaCAEANoInformadosResponse {
         
@@ -3213,7 +3365,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarCAEARequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarCAEARequest {
         
@@ -3236,7 +3387,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarCAEAResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarCAEAResponse {
         
@@ -3265,7 +3415,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarCAEAEntreFechasRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarCAEAEntreFechasRequest {
         
@@ -3293,7 +3442,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarCAEAEntreFechasResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarCAEAEntreFechasResponse {
         
@@ -3323,7 +3471,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="autorizarAjusteIVARequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class autorizarAjusteIVARequest {
         
@@ -3346,7 +3493,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="autorizarAjusteIVAResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class autorizarAjusteIVAResponse {
         
@@ -3386,7 +3532,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="informarAjusteIVACAEARequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class informarAjusteIVACAEARequest {
         
@@ -3409,7 +3554,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="informarAjusteIVACAEAResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class informarAjusteIVACAEAResponse {
         
@@ -3454,7 +3598,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarTiposDatosAdicionalesRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarTiposDatosAdicionalesRequest {
         
@@ -3472,7 +3615,6 @@ namespace WSMTXCA_SRV.MTXCA {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="consultarTiposDatosAdicionalesResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
     public partial class consultarTiposDatosAdicionalesResponse {
         
@@ -3490,6 +3632,112 @@ namespace WSMTXCA_SRV.MTXCA {
         
         public consultarTiposDatosAdicionalesResponse(WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] arrayTiposDatosAdicionales, WSMTXCA_SRV.MTXCA.CodigoDescripcionType evento) {
             this.arrayTiposDatosAdicionales = arrayTiposDatosAdicionales;
+            this.evento = evento;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/")]
+    public partial class ActividadVigenteType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long codigoField;
+        
+        private long ordenField;
+        
+        private string descripcionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public long codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+                this.RaisePropertyChanged("codigo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public long orden {
+            get {
+                return this.ordenField;
+            }
+            set {
+                this.ordenField = value;
+                this.RaisePropertyChanged("orden");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string descripcion {
+            get {
+                return this.descripcionField;
+            }
+            set {
+                this.descripcionField = value;
+                this.RaisePropertyChanged("descripcion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultarActividadesVigentesRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
+    public partial class consultarActividadesVigentesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WSMTXCA_SRV.MTXCA.AuthRequestType authRequest;
+        
+        public consultarActividadesVigentesRequest() {
+        }
+        
+        public consultarActividadesVigentesRequest(WSMTXCA_SRV.MTXCA.AuthRequestType authRequest) {
+            this.authRequest = authRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultarActividadesVigentesResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
+    public partial class consultarActividadesVigentesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("actividad", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public WSMTXCA_SRV.MTXCA.ActividadVigenteType[] arrayActividades;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/", Order=1)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("codigoDescripcion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] arrayErrores;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WSMTXCA_SRV.MTXCA.CodigoDescripcionType evento;
+        
+        public consultarActividadesVigentesResponse() {
+        }
+        
+        public consultarActividadesVigentesResponse(WSMTXCA_SRV.MTXCA.ActividadVigenteType[] arrayActividades, WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] arrayErrores, WSMTXCA_SRV.MTXCA.CodigoDescripcionType evento) {
+            this.arrayActividades = arrayActividades;
+            this.arrayErrores = arrayErrores;
             this.evento = evento;
         }
     }
@@ -3534,6 +3782,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.appserver;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.dummyResponse> dummyAsync(WSMTXCA_SRV.MTXCA.dummyRequest request) {
+            return base.Channel.dummyAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.autorizarComprobanteResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.autorizarComprobante(WSMTXCA_SRV.MTXCA.autorizarComprobanteRequest request) {
             return base.Channel.autorizarComprobante(request);
@@ -3551,6 +3803,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.resultado;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.autorizarComprobanteResponse> autorizarComprobanteAsync(WSMTXCA_SRV.MTXCA.autorizarComprobanteRequest request) {
+            return base.Channel.autorizarComprobanteAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.solicitarCAEAResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.solicitarCAEA(WSMTXCA_SRV.MTXCA.solicitarCAEARequest request) {
             return base.Channel.solicitarCAEA(request);
@@ -3564,6 +3820,10 @@ namespace WSMTXCA_SRV.MTXCA {
             arrayErrores = retVal.arrayErrores;
             evento = retVal.evento;
             return retVal.CAEAResponse;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.solicitarCAEAResponse> solicitarCAEAAsync(WSMTXCA_SRV.MTXCA.solicitarCAEARequest request) {
+            return base.Channel.solicitarCAEAAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3584,6 +3844,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.resultado;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.informarComprobanteCAEAResponse> informarComprobanteCAEAAsync(WSMTXCA_SRV.MTXCA.informarComprobanteCAEARequest request) {
+            return base.Channel.informarComprobanteCAEAAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.consultarUltimoComprobanteAutorizadoResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarUltimoComprobanteAutorizado(WSMTXCA_SRV.MTXCA.consultarUltimoComprobanteAutorizadoRequest request) {
             return base.Channel.consultarUltimoComprobanteAutorizado(request);
@@ -3597,6 +3861,10 @@ namespace WSMTXCA_SRV.MTXCA {
             arrayErrores = retVal.arrayErrores;
             evento = retVal.evento;
             return retVal.numeroComprobante;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarUltimoComprobanteAutorizadoResponse> consultarUltimoComprobanteAutorizadoAsync(WSMTXCA_SRV.MTXCA.consultarUltimoComprobanteAutorizadoRequest request) {
+            return base.Channel.consultarUltimoComprobanteAutorizadoAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3615,6 +3883,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.comprobante;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarComprobanteResponse> consultarComprobanteAsync(WSMTXCA_SRV.MTXCA.consultarComprobanteRequest request) {
+            return base.Channel.consultarComprobanteAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.consultarTiposComprobanteResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarTiposComprobante(WSMTXCA_SRV.MTXCA.consultarTiposComprobanteRequest request) {
             return base.Channel.consultarTiposComprobante(request);
@@ -3626,6 +3898,10 @@ namespace WSMTXCA_SRV.MTXCA {
             WSMTXCA_SRV.MTXCA.consultarTiposComprobanteResponse retVal = ((WSMTXCA_SRV.MTXCA.MTXCAServicePortType)(this)).consultarTiposComprobante(inValue);
             evento = retVal.evento;
             return retVal.arrayTiposComprobante;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarTiposComprobanteResponse> consultarTiposComprobanteAsync(WSMTXCA_SRV.MTXCA.consultarTiposComprobanteRequest request) {
+            return base.Channel.consultarTiposComprobanteAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3641,6 +3917,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.arrayTiposDocumento;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarTiposDocumentoResponse> consultarTiposDocumentoAsync(WSMTXCA_SRV.MTXCA.consultarTiposDocumentoRequest request) {
+            return base.Channel.consultarTiposDocumentoAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.consultarAlicuotasIVAResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarAlicuotasIVA(WSMTXCA_SRV.MTXCA.consultarAlicuotasIVARequest request) {
             return base.Channel.consultarAlicuotasIVA(request);
@@ -3652,6 +3932,10 @@ namespace WSMTXCA_SRV.MTXCA {
             WSMTXCA_SRV.MTXCA.consultarAlicuotasIVAResponse retVal = ((WSMTXCA_SRV.MTXCA.MTXCAServicePortType)(this)).consultarAlicuotasIVA(inValue);
             evento = retVal.evento;
             return retVal.arrayAlicuotasIVA;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarAlicuotasIVAResponse> consultarAlicuotasIVAAsync(WSMTXCA_SRV.MTXCA.consultarAlicuotasIVARequest request) {
+            return base.Channel.consultarAlicuotasIVAAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3667,6 +3951,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.arrayCondicionesIVA;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarCondicionesIVAResponse> consultarCondicionesIVAAsync(WSMTXCA_SRV.MTXCA.consultarCondicionesIVARequest request) {
+            return base.Channel.consultarCondicionesIVAAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.consultarMonedasResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarMonedas(WSMTXCA_SRV.MTXCA.consultarMonedasRequest request) {
             return base.Channel.consultarMonedas(request);
@@ -3678,6 +3966,10 @@ namespace WSMTXCA_SRV.MTXCA {
             WSMTXCA_SRV.MTXCA.consultarMonedasResponse retVal = ((WSMTXCA_SRV.MTXCA.MTXCAServicePortType)(this)).consultarMonedas(inValue);
             evento = retVal.evento;
             return retVal.arrayMonedas;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarMonedasResponse> consultarMonedasAsync(WSMTXCA_SRV.MTXCA.consultarMonedasRequest request) {
+            return base.Channel.consultarMonedasAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3695,6 +3987,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.cotizacionMoneda;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarCotizacionMonedaResponse> consultarCotizacionMonedaAsync(WSMTXCA_SRV.MTXCA.consultarCotizacionMonedaRequest request) {
+            return base.Channel.consultarCotizacionMonedaAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.consultarUnidadesMedidaResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarUnidadesMedida(WSMTXCA_SRV.MTXCA.consultarUnidadesMedidaRequest request) {
             return base.Channel.consultarUnidadesMedida(request);
@@ -3706,6 +4002,10 @@ namespace WSMTXCA_SRV.MTXCA {
             WSMTXCA_SRV.MTXCA.consultarUnidadesMedidaResponse retVal = ((WSMTXCA_SRV.MTXCA.MTXCAServicePortType)(this)).consultarUnidadesMedida(inValue);
             evento = retVal.evento;
             return retVal.arrayUnidadesMedida;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarUnidadesMedidaResponse> consultarUnidadesMedidaAsync(WSMTXCA_SRV.MTXCA.consultarUnidadesMedidaRequest request) {
+            return base.Channel.consultarUnidadesMedidaAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3721,6 +4021,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.arrayTiposTributo;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarTiposTributoResponse> consultarTiposTributoAsync(WSMTXCA_SRV.MTXCA.consultarTiposTributoRequest request) {
+            return base.Channel.consultarTiposTributoAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.consultarPuntosVentaResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarPuntosVenta(WSMTXCA_SRV.MTXCA.consultarPuntosVentaRequest request) {
             return base.Channel.consultarPuntosVenta(request);
@@ -3732,6 +4036,10 @@ namespace WSMTXCA_SRV.MTXCA {
             WSMTXCA_SRV.MTXCA.consultarPuntosVentaResponse retVal = ((WSMTXCA_SRV.MTXCA.MTXCAServicePortType)(this)).consultarPuntosVenta(inValue);
             evento = retVal.evento;
             return retVal.arrayPuntosVenta;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarPuntosVentaResponse> consultarPuntosVentaAsync(WSMTXCA_SRV.MTXCA.consultarPuntosVentaRequest request) {
+            return base.Channel.consultarPuntosVentaAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3747,6 +4055,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.arrayPuntosVenta;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEResponse> consultarPuntosVentaCAEAsync(WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAERequest request) {
+            return base.Channel.consultarPuntosVentaCAEAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEAResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarPuntosVentaCAEA(WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEARequest request) {
             return base.Channel.consultarPuntosVentaCAEA(request);
@@ -3758,6 +4070,10 @@ namespace WSMTXCA_SRV.MTXCA {
             WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEAResponse retVal = ((WSMTXCA_SRV.MTXCA.MTXCAServicePortType)(this)).consultarPuntosVentaCAEA(inValue);
             evento = retVal.evento;
             return retVal.arrayPuntosVenta;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEAResponse> consultarPuntosVentaCAEAAsync(WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEARequest request) {
+            return base.Channel.consultarPuntosVentaCAEAAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3775,6 +4091,10 @@ namespace WSMTXCA_SRV.MTXCA {
             arrayErrores = retVal.arrayErrores;
             evento = retVal.evento;
             return retVal.resultado;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoResponse> informarCAEANoUtilizadoAsync(WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoRequest request) {
+            return base.Channel.informarCAEANoUtilizadoAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3796,6 +4116,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.resultado;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoPtoVtaResponse> informarCAEANoUtilizadoPtoVtaAsync(WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoPtoVtaRequest request) {
+            return base.Channel.informarCAEANoUtilizadoPtoVtaAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.consultarPtosVtaCAEANoInformadosResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarPtosVtaCAEANoInformados(WSMTXCA_SRV.MTXCA.consultarPtosVtaCAEANoInformadosRequest request) {
             return base.Channel.consultarPtosVtaCAEANoInformados(request);
@@ -3811,6 +4135,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.arrayPuntosVenta;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarPtosVtaCAEANoInformadosResponse> consultarPtosVtaCAEANoInformadosAsync(WSMTXCA_SRV.MTXCA.consultarPtosVtaCAEANoInformadosRequest request) {
+            return base.Channel.consultarPtosVtaCAEANoInformadosAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.consultarCAEAResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarCAEA(WSMTXCA_SRV.MTXCA.consultarCAEARequest request) {
             return base.Channel.consultarCAEA(request);
@@ -3824,6 +4152,10 @@ namespace WSMTXCA_SRV.MTXCA {
             arrayErrores = retVal.arrayErrores;
             evento = retVal.evento;
             return retVal.CAEAResponse;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarCAEAResponse> consultarCAEAAsync(WSMTXCA_SRV.MTXCA.consultarCAEARequest request) {
+            return base.Channel.consultarCAEAAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3842,6 +4174,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.arrayCAEAResponse;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarCAEAEntreFechasResponse> consultarCAEAEntreFechasAsync(WSMTXCA_SRV.MTXCA.consultarCAEAEntreFechasRequest request) {
+            return base.Channel.consultarCAEAEntreFechasAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.autorizarAjusteIVAResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.autorizarAjusteIVA(WSMTXCA_SRV.MTXCA.autorizarAjusteIVARequest request) {
             return base.Channel.autorizarAjusteIVA(request);
@@ -3857,6 +4193,10 @@ namespace WSMTXCA_SRV.MTXCA {
             arrayErrores = retVal.arrayErrores;
             evento = retVal.evento;
             return retVal.resultado;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.autorizarAjusteIVAResponse> autorizarAjusteIVAAsync(WSMTXCA_SRV.MTXCA.autorizarAjusteIVARequest request) {
+            return base.Channel.autorizarAjusteIVAAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3877,6 +4217,10 @@ namespace WSMTXCA_SRV.MTXCA {
             return retVal.resultado;
         }
         
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.informarAjusteIVACAEAResponse> informarAjusteIVACAEAAsync(WSMTXCA_SRV.MTXCA.informarAjusteIVACAEARequest request) {
+            return base.Channel.informarAjusteIVACAEAAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WSMTXCA_SRV.MTXCA.consultarTiposDatosAdicionalesResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarTiposDatosAdicionales(WSMTXCA_SRV.MTXCA.consultarTiposDatosAdicionalesRequest request) {
             return base.Channel.consultarTiposDatosAdicionales(request);
@@ -3888,6 +4232,28 @@ namespace WSMTXCA_SRV.MTXCA {
             WSMTXCA_SRV.MTXCA.consultarTiposDatosAdicionalesResponse retVal = ((WSMTXCA_SRV.MTXCA.MTXCAServicePortType)(this)).consultarTiposDatosAdicionales(inValue);
             evento = retVal.evento;
             return retVal.arrayTiposDatosAdicionales;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarTiposDatosAdicionalesResponse> consultarTiposDatosAdicionalesAsync(WSMTXCA_SRV.MTXCA.consultarTiposDatosAdicionalesRequest request) {
+            return base.Channel.consultarTiposDatosAdicionalesAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSMTXCA_SRV.MTXCA.consultarActividadesVigentesResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarActividadesVigentes(WSMTXCA_SRV.MTXCA.consultarActividadesVigentesRequest request) {
+            return base.Channel.consultarActividadesVigentes(request);
+        }
+        
+        public WSMTXCA_SRV.MTXCA.ActividadVigenteType[] consultarActividadesVigentes(WSMTXCA_SRV.MTXCA.AuthRequestType authRequest, out WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] arrayErrores, out WSMTXCA_SRV.MTXCA.CodigoDescripcionType evento) {
+            WSMTXCA_SRV.MTXCA.consultarActividadesVigentesRequest inValue = new WSMTXCA_SRV.MTXCA.consultarActividadesVigentesRequest();
+            inValue.authRequest = authRequest;
+            WSMTXCA_SRV.MTXCA.consultarActividadesVigentesResponse retVal = ((WSMTXCA_SRV.MTXCA.MTXCAServicePortType)(this)).consultarActividadesVigentes(inValue);
+            arrayErrores = retVal.arrayErrores;
+            evento = retVal.evento;
+            return retVal.arrayActividades;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarActividadesVigentesResponse> consultarActividadesVigentesAsync(WSMTXCA_SRV.MTXCA.consultarActividadesVigentesRequest request) {
+            return base.Channel.consultarActividadesVigentesAsync(request);
         }
     }
 }

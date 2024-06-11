@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8e04be53-0560-4126-9b50-d66b91b48292" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="589ca563-c36f-40c4-83e7-5392ed673a95" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -21,7 +22,7 @@
     <MetadataSource Address="https://serviciosjava.afip.gob.ar/wsmtxca/services/MTXCAService?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="65e24e88-a675-4d71-a22a-8753b1ce442d" SourceId="1" SourceUrl="https://serviciosjava.afip.gob.ar/wsmtxca/services/MTXCAService?wsdl" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="726b980f-6fdc-46ec-a603-515006ea1b7d" SourceId="1" SourceUrl="https://serviciosjava.afip.gob.ar/wsmtxca/services/MTXCAService?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

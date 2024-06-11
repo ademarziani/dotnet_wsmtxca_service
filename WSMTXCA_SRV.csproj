@@ -35,11 +35,15 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+      <HintPath>packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
@@ -68,6 +72,7 @@
     <Compile Include="Entidades\DatoAdicional.cs" />
     <Compile Include="Entidades\Detalle.cs" />
     <Compile Include="Entidades\OtrosTributo.cs" />
+    <Compile Include="Entidades\PeriodoComprobanteAsociado.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\SubTotIVA.cs" />
     <Compile Include="Entidades\Sujeto.cs" />
@@ -104,6 +109,15 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\MTXCA\service.wsdl" />
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.ActividadVigenteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.autorizarAjusteIVAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.autorizarComprobanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.CAEAResponseType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -122,10 +136,82 @@
     <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.ComprobanteType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarActividadesVigentesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarAlicuotasIVAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarCAEAEntreFechasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarCAEAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarComprobanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarCondicionesIVAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarCotizacionMonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarMonedasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarPtosVtaCAEANoInformadosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarPuntosVentaCAEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarPuntosVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarTiposComprobanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarTiposDatosAdicionalesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarTiposDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarTiposTributoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarUltimoComprobanteAutorizadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.consultarUnidadesMedidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.dummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.informarAjusteIVACAEAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoPtoVtaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.informarCAEANoUtilizadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.informarComprobanteCAEAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.PuntoVentaType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.ResultadoSimpleType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MTXCA\WSMTXCA_SRV.MTXCA.solicitarCAEAResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="packages.config" />
