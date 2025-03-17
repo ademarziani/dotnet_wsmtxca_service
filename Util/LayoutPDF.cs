@@ -167,7 +167,6 @@ namespace WSMTXCA_SRV.Util
             descIva.Add(4, "10,5 %");
             descIva.Add(5, "21 %");
 
-            table.AddCell(cellEncabezado("Articulo", Element.ALIGN_RIGHT));
             table.AddCell(cellEncabezado("Descripción", Element.ALIGN_LEFT));
             table.AddCell(cellEncabezado("Bultos", Element.ALIGN_RIGHT));
             table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
@@ -175,6 +174,7 @@ namespace WSMTXCA_SRV.Util
             table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
             table.AddCell(cellEncabezado("Precio", Element.ALIGN_RIGHT));
             table.AddCell(cellEncabezado((compImp.impDescuento != 0 ? "Bonif.": " "), Element.ALIGN_RIGHT));
+            table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
             table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
             table.AddCell(cellEncabezado((compImp.serie == "A" ? "IVA" : " "), Element.ALIGN_RIGHT));
             table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
@@ -187,7 +187,6 @@ namespace WSMTXCA_SRV.Util
             {
                 if (nroPagina(index) == pagina)
                 {
-                    table.AddCell(cellItems(item.prod.codigo, Element.ALIGN_RIGHT));
                     table.AddCell(cellItems(item.prod.descrip));
                     table.AddCell(cellItems(item.bultos));
                     table.AddCell(cellItems(item.prod.unidadm2));
@@ -202,6 +201,14 @@ namespace WSMTXCA_SRV.Util
                     else
                     {
                         table.AddCell(cellItems(" "));
+                        table.AddCell(cellItems(" "));
+                    }
+                    if (item.porcBonif2 != 0)
+                    {
+                        table.AddCell(cellItems($"{item.porcBonif2.ToString("N")}%"));
+                    }
+                    else 
+                    {
                         table.AddCell(cellItems(" "));
                     }
                     if (compImp.serie == "A")
@@ -362,7 +369,7 @@ namespace WSMTXCA_SRV.Util
 
             jsonQr = "{\"ver\":1" +
                 ",\"fecha\":\""+compImp.fecha.ToString("yyyy-MM-dd")+"\"" +
-                ",\"cuit\":30555386997"+
+                ",\"cuit\":"+Variables.CUIT+
                 ",\"ptoVta\":"+compImp.pv+
                 ",\"tipoCmp\":"+compImp.tipocomp+
                 ",\"nroCmp\":"+compImp.nrocomp+
