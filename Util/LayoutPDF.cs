@@ -34,31 +34,40 @@ namespace WSMTXCA_SRV.Util
             doc.AddCreator("Desarrollado por Andres Demarziani");
             doc.Open();
 
-            for (short i = 1; i <= 2; i++)
+            try
             {
-                if (i > 1)
-                    doc.NewPage();
-
-                for (int p = 1; p <= paginas; p++)
+                for (short i = 1; i <= 2; i++)
                 {
-                    if (p > 1)
-                    {
+                    if (i > 1)
                         doc.NewPage();
-                    }
-                
-                    encabezado(i, p, paginas);
-                    detalle(p);
-                
-                    if (p == paginas)
+
+                    for (int p = 1; p <= paginas; p++)
                     {
-                        pie();
+                        if (p > 1)
+                        {
+                            doc.NewPage();
+                        }
+
+                        encabezado(i, p, paginas);
+                        detalle(p);
+
+                        if (p == paginas)
+                        {
+                            pie();
+                        }
                     }
+
                 }
-
             }
-
-            doc.Close();
-            writer.Close();
+            catch (Exception ex)
+            {
+                throw new Exception(ex.StackTrace);
+            }
+            finally
+            {
+                doc.Close();
+                writer.Close();
+            }
         }
 
         private static void encabezado(short copia, int pagina, int totPaginas)
@@ -146,20 +155,21 @@ namespace WSMTXCA_SRV.Util
         {
             int index = 0;
             float inicio = doc.PageSize.Height;
-            float[] widths = new float[] {  065f, /*Articulo*/
-                                            160f, /*Descripcion*/
-                                            038f, /*Bultos*/
-                                            019f, /*(UM)*/
-                                            042f, /*Cantidad*/
-                                            019f, /*(UM)*/
-                                            048f, /*Precio*/
-                                            048f, /*Bonif*/
-                                            038f, /*(Porc.)*/
-                                            048f, /*IVA*/
-                                            038f, /*(Porc.)*/
-                                            050f  /*Total*/  };
+            float[] widths = new float[] {  160f, /* 01-Descripcion*/
+                                            038f, /* 02-Bultos*/
+                                            019f, /* 03-(UM)*/
+                                            042f, /* 04-Cantidad*/
+                                            019f, /* 05-(UM)*/
+                                            048f, /* 06-Precio*/
+                                            048f, /* 07-Bonif*/
+                                            038f, /* 08-(Porc.)*/
+                                            048f, /* 09-Promo*/
+                                            038f, /* 10-(Porc. Promo)*/
+                                            050f, /* 11-IVA*/
+                                            036f, /* 12-(Porc. IVA)*/
+                                            050f  /* 13-Total*/  };
 
-            PdfPTable table = new PdfPTable(12);
+            PdfPTable table = new PdfPTable(widths.Length);
             PdfContentByte pcb = writer.DirectContent;
             Dictionary<short, string> descIva = new Dictionary<short, string>();
 
@@ -167,18 +177,19 @@ namespace WSMTXCA_SRV.Util
             descIva.Add(4, "10,5 %");
             descIva.Add(5, "21 %");
 
-            table.AddCell(cellEncabezado("Descripción", Element.ALIGN_LEFT));
-            table.AddCell(cellEncabezado("Bultos", Element.ALIGN_RIGHT));
-            table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
-            table.AddCell(cellEncabezado("Cant.", Element.ALIGN_RIGHT));
-            table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
-            table.AddCell(cellEncabezado("Precio", Element.ALIGN_RIGHT));
-            table.AddCell(cellEncabezado((compImp.impDescuento != 0 ? "Bonif.": " "), Element.ALIGN_RIGHT));
-            table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
-            table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
-            table.AddCell(cellEncabezado((compImp.serie == "A" ? "IVA" : " "), Element.ALIGN_RIGHT));
-            table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
-            table.AddCell(cellEncabezado("Importe", Element.ALIGN_RIGHT));
+            /*01*/ table.AddCell(cellEncabezado("Descripción", Element.ALIGN_LEFT));
+            /*02*/ table.AddCell(cellEncabezado("Bultos", Element.ALIGN_RIGHT));
+            /*03*/ table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
+            /*04*/ table.AddCell(cellEncabezado("Cant.", Element.ALIGN_RIGHT));
+            /*05*/ table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
+            /*06*/ table.AddCell(cellEncabezado("Precio", Element.ALIGN_RIGHT));
+            /*07*/ table.AddCell(cellEncabezado((compImp.impDescuento != 0 ? "Bonif.": " "), Element.ALIGN_RIGHT));
+            /*08*/ table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
+            /*09*/ table.AddCell(cellEncabezado((compImp.impDescuento != 0 ? "Promoción" : " "), Element.ALIGN_RIGHT));
+            /*10*/ table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
+            /*11*/ table.AddCell(cellEncabezado((Variables.DISC_IMPS || compImp.serie == "A" ? "IVA" : " "), Element.ALIGN_RIGHT));
+            /*12*/ table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
+            /*13*/ table.AddCell(cellEncabezado("Importe", Element.ALIGN_RIGHT));
 
             table.TotalWidth = 565f;
             table.SetWidths(widths);
@@ -192,8 +203,10 @@ namespace WSMTXCA_SRV.Util
                     table.AddCell(cellItems(item.prod.unidadm2));
                     table.AddCell(cellItems(item.cantidad));
                     table.AddCell(cellItems(item.prod.unidadm1));
-                    table.AddCell(cellItems(item.precio));
-                    if (item.bonif != 0)
+                    table.AddCell(cellItems(item.precioPdf));
+
+                    // Bonificacion
+                    if (item.porcBonif != 0)
                     {
                         table.AddCell(cellItems(item.bonif));
                         table.AddCell(cellItems($"{item.porcBonif.ToString("N")}%"));
@@ -203,17 +216,22 @@ namespace WSMTXCA_SRV.Util
                         table.AddCell(cellItems(" "));
                         table.AddCell(cellItems(" "));
                     }
-                    if (item.porcBonif2 != 0)
+
+                    // Promociones
+                    if (item.porcPromo != 0)
                     {
-                        table.AddCell(cellItems($"{item.porcBonif2.ToString("N")}%"));
+                        table.AddCell(cellItems(item.promo));
+                        table.AddCell(cellItems($"{item.porcPromo.ToString("N")}%"));
                     }
-                    else 
+                    else
                     {
                         table.AddCell(cellItems(" "));
+                        table.AddCell(cellItems(" "));
                     }
-                    if (compImp.serie == "A")
+
+                    if (Variables.DISC_IMPS || compImp.serie == "A")
                     {
-                        table.AddCell(cellItems(item.importeIva));
+                        table.AddCell(cellItems(item.ivaPdf));
                         table.AddCell(cellItems(descIva[item.codIva]));
                     }
                     else
@@ -282,6 +300,11 @@ namespace WSMTXCA_SRV.Util
 
                 inicio -= 40f;
             }
+            else if (Variables.DISC_IMPS && compImp.sujeto.condIVA == "CONSUMIDOR FINAL" && compImp.serie == "B")
+            {
+                imprimeTexto("Régimen de Transparencia Fiscal al Consumidor Ley 27.743.", 8, Element.ALIGN_LEFT, left1, inicio);
+                inicio -= 50f;
+            }
             else
             {
                 inicio -= 50f;
@@ -328,7 +351,7 @@ namespace WSMTXCA_SRV.Util
             imprimeTexto("TOTAL", 13, Element.ALIGN_RIGHT, left2, inicio);
             imprimeTexto(compImp.impTotal.ToString("N"), 13, Element.ALIGN_RIGHT, left3, inicio);
 
-            if (compImp.serie == "A")
+            if (Variables.DISC_IMPS || compImp.serie == "A")
             {
                 inicio += 45f;
                 foreach (var iva in compImp.subtotalesIVAs)

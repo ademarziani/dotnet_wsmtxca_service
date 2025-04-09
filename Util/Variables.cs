@@ -35,6 +35,7 @@ namespace WSMTXCA_SRV.Util
         public readonly static string MUNICIPIO;
         public readonly static string NROIIBB;
         public readonly static bool ULTCOMP;
+        public readonly static bool DISC_IMPS;
         public readonly static int LOGO_WIDTH;
         public readonly static int LOGO_HEIGHT;
 
@@ -74,6 +75,7 @@ namespace WSMTXCA_SRV.Util
             MUNICIPIO = xmlNodo["municipio"].InnerText;
             NROIIBB = xmlNodo["nroiibb"].InnerText;
             ULTCOMP = xmlNodo["ultcomp"].InnerText == "1";
+            DISC_IMPS = xmlNodo["disc_imps"].InnerText == "1";
             LOGO_WIDTH = int.Parse(xmlNodo["widthLogo"].InnerText);
             LOGO_HEIGHT = int.Parse(xmlNodo["heightLogo"].InnerText);
 
