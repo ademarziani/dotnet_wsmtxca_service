@@ -283,6 +283,15 @@ namespace WSMTXCA_SRV.MTXCA {
         // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
         [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarActividadesVigentes", ReplyAction="*")]
         System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarActividadesVigentesResponse> consultarActividadesVigentesAsync(WSMTXCA_SRV.MTXCA.consultarActividadesVigentesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCondicionesIVAReceptor", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(WSMTXCA_SRV.MTXCA.ExceptionResponseType), Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCondicionesIVAReceptor", Name="exceptionResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSMTXCA_SRV.MTXCA.consultarCondicionesIVAReceptorResponse consultarCondicionesIVAReceptor(WSMTXCA_SRV.MTXCA.consultarCondicionesIVAReceptorRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://impl.service.wsmtxca.afip.gov.ar/service/consultarCondicionesIVAReceptor", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarCondicionesIVAReceptorResponse> consultarCondicionesIVAReceptorAsync(WSMTXCA_SRV.MTXCA.consultarCondicionesIVAReceptorRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -419,6 +428,8 @@ namespace WSMTXCA_SRV.MTXCA {
         
         private bool numeroDocumentoFieldSpecified;
         
+        private short condicionIVAReceptorField;
+        
         private decimal importeGravadoField;
         
         private bool importeGravadoFieldSpecified;
@@ -442,6 +453,12 @@ namespace WSMTXCA_SRV.MTXCA {
         private string codigoMonedaField;
         
         private decimal cotizacionMonedaField;
+        
+        private bool cotizacionMonedaFieldSpecified;
+        
+        private SiNoSimpleType cancelaEnMismaMonedaExtranjeraField;
+        
+        private bool cancelaEnMismaMonedaExtranjeraFieldSpecified;
         
         private string observacionesField;
         
@@ -661,6 +678,18 @@ namespace WSMTXCA_SRV.MTXCA {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public short condicionIVAReceptor {
+            get {
+                return this.condicionIVAReceptorField;
+            }
+            set {
+                this.condicionIVAReceptorField = value;
+                this.RaisePropertyChanged("condicionIVAReceptor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
         public decimal importeGravado {
             get {
                 return this.importeGravadoField;
@@ -684,7 +713,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public decimal importeNoGravado {
             get {
                 return this.importeNoGravadoField;
@@ -708,7 +737,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public decimal importeExento {
             get {
                 return this.importeExentoField;
@@ -732,7 +761,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public decimal importeSubtotal {
             get {
                 return this.importeSubtotalField;
@@ -744,7 +773,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
         public decimal importeOtrosTributos {
             get {
                 return this.importeOtrosTributosField;
@@ -768,7 +797,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
         public decimal importeTotal {
             get {
                 return this.importeTotalField;
@@ -780,7 +809,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
         public string codigoMoneda {
             get {
                 return this.codigoMonedaField;
@@ -792,7 +821,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
         public decimal cotizacionMoneda {
             get {
                 return this.cotizacionMonedaField;
@@ -804,7 +833,43 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool cotizacionMonedaSpecified {
+            get {
+                return this.cotizacionMonedaFieldSpecified;
+            }
+            set {
+                this.cotizacionMonedaFieldSpecified = value;
+                this.RaisePropertyChanged("cotizacionMonedaSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        public SiNoSimpleType cancelaEnMismaMonedaExtranjera {
+            get {
+                return this.cancelaEnMismaMonedaExtranjeraField;
+            }
+            set {
+                this.cancelaEnMismaMonedaExtranjeraField = value;
+                this.RaisePropertyChanged("cancelaEnMismaMonedaExtranjera");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool cancelaEnMismaMonedaExtranjeraSpecified {
+            get {
+                return this.cancelaEnMismaMonedaExtranjeraFieldSpecified;
+            }
+            set {
+                this.cancelaEnMismaMonedaExtranjeraFieldSpecified = value;
+                this.RaisePropertyChanged("cancelaEnMismaMonedaExtranjeraSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
         public string observaciones {
             get {
                 return this.observacionesField;
@@ -816,7 +881,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
         public short codigoConcepto {
             get {
                 return this.codigoConceptoField;
@@ -828,7 +893,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date", Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date", Order=21)]
         public System.DateTime fechaServicioDesde {
             get {
                 return this.fechaServicioDesdeField;
@@ -852,7 +917,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date", Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date", Order=22)]
         public System.DateTime fechaServicioHasta {
             get {
                 return this.fechaServicioHastaField;
@@ -876,7 +941,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date", Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date", Order=23)]
         public System.DateTime fechaVencimientoPago {
             get {
                 return this.fechaVencimientoPagoField;
@@ -900,7 +965,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
         public System.DateTime fechaHoraGen {
             get {
                 return this.fechaHoraGenField;
@@ -924,7 +989,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
         [System.Xml.Serialization.XmlArrayItemAttribute("comprobanteAsociado", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public ComprobanteAsociadoType[] arrayComprobantesAsociados {
             get {
@@ -937,7 +1002,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
         public PeriodoComprobantesAsociadosType periodoComprobantesAsociados {
             get {
                 return this.periodoComprobantesAsociadosField;
@@ -949,7 +1014,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
         [System.Xml.Serialization.XmlArrayItemAttribute("otroTributo", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public OtroTributoType[] arrayOtrosTributos {
             get {
@@ -962,7 +1027,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
         [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public ItemType[] arrayItems {
             get {
@@ -975,7 +1040,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
         [System.Xml.Serialization.XmlArrayItemAttribute("subtotalIVA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public SubtotalIVAType[] arraySubtotalesIVA {
             get {
@@ -988,7 +1053,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
         [System.Xml.Serialization.XmlArrayItemAttribute("datoAdicional", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public DatoAdicionalType[] arrayDatosAdicionales {
             get {
@@ -1001,7 +1066,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
         [System.Xml.Serialization.XmlArrayItemAttribute("comprador", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public CompradorType[] arrayCompradores {
             get {
@@ -1014,7 +1079,7 @@ namespace WSMTXCA_SRV.MTXCA {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
         [System.Xml.Serialization.XmlArrayItemAttribute("actividad", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public ActividadType[] arrayActividades {
             get {
@@ -1047,6 +1112,19 @@ namespace WSMTXCA_SRV.MTXCA {
         
         /// <remarks/>
         E,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/")]
+    public enum SiNoSimpleType {
+        
+        /// <remarks/>
+        S,
+        
+        /// <remarks/>
+        N,
     }
     
     /// <remarks/>
@@ -2858,12 +2936,17 @@ namespace WSMTXCA_SRV.MTXCA {
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string codigoMoneda;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="date")]
+        public System.DateTime fechaCotizacion;
+        
         public consultarCotizacionMonedaRequest() {
         }
         
-        public consultarCotizacionMonedaRequest(WSMTXCA_SRV.MTXCA.AuthRequestType authRequest, string codigoMoneda) {
+        public consultarCotizacionMonedaRequest(WSMTXCA_SRV.MTXCA.AuthRequestType authRequest, string codigoMoneda, System.DateTime fechaCotizacion) {
             this.authRequest = authRequest;
             this.codigoMoneda = codigoMoneda;
+            this.fechaCotizacion = fechaCotizacion;
         }
     }
     
@@ -3047,19 +3130,6 @@ namespace WSMTXCA_SRV.MTXCA {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/")]
-    public enum SiNoSimpleType {
-        
-        /// <remarks/>
-        S,
-        
-        /// <remarks/>
-        N,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3742,6 +3812,89 @@ namespace WSMTXCA_SRV.MTXCA {
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/")]
+    public partial class ConsultaCondicionesIVARequestType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private short codigoTipoComprobanteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public short codigoTipoComprobante {
+            get {
+                return this.codigoTipoComprobanteField;
+            }
+            set {
+                this.codigoTipoComprobanteField = value;
+                this.RaisePropertyChanged("codigoTipoComprobante");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultarCondicionesIVAReceptorRequest", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
+    public partial class consultarCondicionesIVAReceptorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WSMTXCA_SRV.MTXCA.AuthRequestType authRequest;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WSMTXCA_SRV.MTXCA.ConsultaCondicionesIVARequestType consultaCondicionesIVAReceptorRequest;
+        
+        public consultarCondicionesIVAReceptorRequest() {
+        }
+        
+        public consultarCondicionesIVAReceptorRequest(WSMTXCA_SRV.MTXCA.AuthRequestType authRequest, WSMTXCA_SRV.MTXCA.ConsultaCondicionesIVARequestType consultaCondicionesIVAReceptorRequest) {
+            this.authRequest = authRequest;
+            this.consultaCondicionesIVAReceptorRequest = consultaCondicionesIVAReceptorRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultarCondicionesIVAReceptorResponse", WrapperNamespace="http://impl.service.wsmtxca.afip.gov.ar/service/", IsWrapped=true)]
+    public partial class consultarCondicionesIVAReceptorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("codigoDescripcion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] arrayCondicionesIVAReceptor;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/", Order=1)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("codigoDescripcion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] arrayErrores;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://impl.service.wsmtxca.afip.gov.ar/service/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WSMTXCA_SRV.MTXCA.CodigoDescripcionType evento;
+        
+        public consultarCondicionesIVAReceptorResponse() {
+        }
+        
+        public consultarCondicionesIVAReceptorResponse(WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] arrayCondicionesIVAReceptor, WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] arrayErrores, WSMTXCA_SRV.MTXCA.CodigoDescripcionType evento) {
+            this.arrayCondicionesIVAReceptor = arrayCondicionesIVAReceptor;
+            this.arrayErrores = arrayErrores;
+            this.evento = evento;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface MTXCAServicePortTypeChannel : WSMTXCA_SRV.MTXCA.MTXCAServicePortType, System.ServiceModel.IClientChannel {
     }
@@ -3977,10 +4130,11 @@ namespace WSMTXCA_SRV.MTXCA {
             return base.Channel.consultarCotizacionMoneda(request);
         }
         
-        public decimal consultarCotizacionMoneda(WSMTXCA_SRV.MTXCA.AuthRequestType authRequest, string codigoMoneda, out WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] arrayErrores, out WSMTXCA_SRV.MTXCA.CodigoDescripcionType evento) {
+        public decimal consultarCotizacionMoneda(WSMTXCA_SRV.MTXCA.AuthRequestType authRequest, string codigoMoneda, System.DateTime fechaCotizacion, out WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] arrayErrores, out WSMTXCA_SRV.MTXCA.CodigoDescripcionType evento) {
             WSMTXCA_SRV.MTXCA.consultarCotizacionMonedaRequest inValue = new WSMTXCA_SRV.MTXCA.consultarCotizacionMonedaRequest();
             inValue.authRequest = authRequest;
             inValue.codigoMoneda = codigoMoneda;
+            inValue.fechaCotizacion = fechaCotizacion;
             WSMTXCA_SRV.MTXCA.consultarCotizacionMonedaResponse retVal = ((WSMTXCA_SRV.MTXCA.MTXCAServicePortType)(this)).consultarCotizacionMoneda(inValue);
             arrayErrores = retVal.arrayErrores;
             evento = retVal.evento;
@@ -4254,6 +4408,25 @@ namespace WSMTXCA_SRV.MTXCA {
         
         public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarActividadesVigentesResponse> consultarActividadesVigentesAsync(WSMTXCA_SRV.MTXCA.consultarActividadesVigentesRequest request) {
             return base.Channel.consultarActividadesVigentesAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSMTXCA_SRV.MTXCA.consultarCondicionesIVAReceptorResponse WSMTXCA_SRV.MTXCA.MTXCAServicePortType.consultarCondicionesIVAReceptor(WSMTXCA_SRV.MTXCA.consultarCondicionesIVAReceptorRequest request) {
+            return base.Channel.consultarCondicionesIVAReceptor(request);
+        }
+        
+        public WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] consultarCondicionesIVAReceptor(WSMTXCA_SRV.MTXCA.AuthRequestType authRequest, WSMTXCA_SRV.MTXCA.ConsultaCondicionesIVARequestType consultaCondicionesIVAReceptorRequest, out WSMTXCA_SRV.MTXCA.CodigoDescripcionType[] arrayErrores, out WSMTXCA_SRV.MTXCA.CodigoDescripcionType evento) {
+            WSMTXCA_SRV.MTXCA.consultarCondicionesIVAReceptorRequest inValue = new WSMTXCA_SRV.MTXCA.consultarCondicionesIVAReceptorRequest();
+            inValue.authRequest = authRequest;
+            inValue.consultaCondicionesIVAReceptorRequest = consultaCondicionesIVAReceptorRequest;
+            WSMTXCA_SRV.MTXCA.consultarCondicionesIVAReceptorResponse retVal = ((WSMTXCA_SRV.MTXCA.MTXCAServicePortType)(this)).consultarCondicionesIVAReceptor(inValue);
+            arrayErrores = retVal.arrayErrores;
+            evento = retVal.evento;
+            return retVal.arrayCondicionesIVAReceptor;
+        }
+        
+        public System.Threading.Tasks.Task<WSMTXCA_SRV.MTXCA.consultarCondicionesIVAReceptorResponse> consultarCondicionesIVAReceptorAsync(WSMTXCA_SRV.MTXCA.consultarCondicionesIVAReceptorRequest request) {
+            return base.Channel.consultarCondicionesIVAReceptorAsync(request);
         }
     }
 }

@@ -114,12 +114,16 @@ namespace WSMTXCA_SRV.Util
                         importeTotal = comprobante.impTotal,
                         codigoMoneda = comprobante.codMoneda,
                         cotizacionMoneda = comprobante.cotizMoneda,
+                        cotizacionMonedaSpecified = true,
+                        cancelaEnMismaMonedaExtranjeraSpecified = (comprobante.codMoneda != "PES" && comprobante.cancelaMismaMoneda == "S"),
+                        cancelaEnMismaMonedaExtranjera = (comprobante.cancelaMismaMoneda == "S" ? MTXCA.SiNoSimpleType.S : MTXCA.SiNoSimpleType.N),
                         observaciones = comprobante.observaciones,
                         codigoConcepto = comprobante.codConcepto,
                         fechaServicioDesde = Convert.ToDateTime(comprobante.desdeServicio),
                         fechaServicioDesdeSpecified = comprobante.codConcepto == 2,
                         fechaServicioHasta = Convert.ToDateTime(comprobante.hastaServicio),
                         fechaServicioHastaSpecified = comprobante.codConcepto == 2,
+                        condicionIVAReceptor = comprobante.condicionIVAReceptor,
                     };
 
                     if (items.Count() > 0)

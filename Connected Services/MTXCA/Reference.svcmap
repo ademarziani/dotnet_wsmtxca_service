@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://serviciosjava.afip.gob.ar/wsmtxca/services/MTXCAService?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://fwshomo.afip.gov.ar/wsmtxca/services/MTXCAService?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="726b980f-6fdc-46ec-a603-515006ea1b7d" SourceId="1" SourceUrl="https://serviciosjava.afip.gob.ar/wsmtxca/services/MTXCAService?wsdl" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="8e2a2854-9d87-4d64-9dbd-3de205c9ab22" SourceId="1" SourceUrl="https://fwshomo.afip.gov.ar/wsmtxca/services/MTXCAService?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

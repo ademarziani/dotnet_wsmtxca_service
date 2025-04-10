@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="kxlKmgUafEBLi6Ge7PfYYu/5Z1pmwOMOEQ7zqGjEAkk=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="umENa+w5xV1uTqezGO8GKerZV5qvuSS9Ap/uo4+n7ZE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="MTXCAServiceSoap11Binding">
       <properties>
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="MTXCAServiceHttpSoap11Endpoint" contract="MTXCA.MTXCAServicePortType" bindingType="basicHttpBinding" address="https://serviciosjava.afip.gob.ar/wsmtxca/services/MTXCAService" bindingConfiguration="MTXCAServiceSoap11Binding">
+    <endpoint name="MTXCAServiceHttpSoap11Endpoint" contract="MTXCA.MTXCAServicePortType" bindingType="basicHttpBinding" address="https://fwshomo.afip.gov.ar/wsmtxca/services/MTXCAService" bindingConfiguration="MTXCAServiceSoap11Binding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://serviciosjava.afip.gob.ar/wsmtxca/services/MTXCAService</serializedValue>
+          <serializedValue>https://fwshomo.afip.gov.ar/wsmtxca/services/MTXCAService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

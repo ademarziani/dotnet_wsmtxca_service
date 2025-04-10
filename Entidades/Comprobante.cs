@@ -31,6 +31,8 @@ namespace WSMTXCA_SRV.Entidades
         public DateTime vctoCae;
         public string resultado;
         public string motivoError;
+        public short condicionIVAReceptor;
+        public string cancelaMismaMoneda;
 
         public decimal impGravado;
         public decimal impNoGravado;
