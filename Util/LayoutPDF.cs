@@ -167,9 +167,9 @@ namespace WSMTXCA_SRV.Util
                                             /*07*/ 048f, /*Precio*/
                                             /*08*/ 048f, /*Bonif*/
                                             /*09*/ 038f, /*(Porc.)*/
-                                            /*10*/ 048f, /*IVA*/
+                                            /*10*/ 060f, /*IVA*/
                                             /*11*/ 038f, /*(Porc.)*/
-                                            /*12*/ 050f  /*Total*/  };
+                                            /*12*/ 060f  /*Total*/  };
 
             PdfPTable table = new PdfPTable(widths.Length);
             PdfContentByte pcb = writer.DirectContent;
