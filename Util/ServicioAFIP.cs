@@ -114,7 +114,7 @@ namespace WSMTXCA_SRV.Util
                         importeTotal = comprobante.impTotal,
                         codigoMoneda = comprobante.codMoneda,
                         cotizacionMoneda = comprobante.cotizMoneda,
-                        cotizacionMonedaSpecified = comprobante.cancelaMismaMoneda == "N",
+                        cotizacionMonedaSpecified = comprobante.codMoneda == "PES" || comprobante.cancelaMismaMoneda == "N",
                         cancelaEnMismaMonedaExtranjeraSpecified = (comprobante.codMoneda != "PES" && comprobante.cancelaMismaMoneda == "S"),
                         cancelaEnMismaMonedaExtranjera = (comprobante.cancelaMismaMoneda == "S" ? MTXCA.SiNoSimpleType.S : MTXCA.SiNoSimpleType.N),
                         observaciones = comprobante.observaciones,
