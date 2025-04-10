@@ -38,6 +38,7 @@ namespace WSMTXCA_SRV.Util
         public readonly static bool DISC_IMPS;
         public readonly static int LOGO_WIDTH;
         public readonly static int LOGO_HEIGHT;
+        public readonly static int CORTE_PG_ITEMS;
 
         static Variables()
         {
@@ -78,7 +79,8 @@ namespace WSMTXCA_SRV.Util
             DISC_IMPS = xmlNodo["disc_imps"].InnerText == "1";
             LOGO_WIDTH = int.Parse(xmlNodo["widthLogo"].InnerText);
             LOGO_HEIGHT = int.Parse(xmlNodo["heightLogo"].InnerText);
-
+            CORTE_PG_ITEMS = int.Parse(xmlNodo["cortePgItems"].InnerText);
+                
             if (esHomo)
             {
                 DIRTICKET = xmlNodo["dirticketHomo"].InnerText;

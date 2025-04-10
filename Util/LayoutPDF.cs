@@ -9,6 +9,7 @@ using iTextSharp.text;
 using iTextSharp.text.html;
 using iTextSharp.text.html.simpleparser;
 using System.Globalization;
+using Org.BouncyCastle.Math;
 
 namespace WSMTXCA_SRV.Util
 {
@@ -18,7 +19,7 @@ namespace WSMTXCA_SRV.Util
         private static PdfWriter writer;
         private static BaseFont _helvetica;
         private static Comprobante compImp;
-        private static int topePagina = 20;
+        private static int topePagina = Variables.CORTE_PG_ITEMS;
 
         public static void generarPDF(Comprobante comprobante)
         {            
@@ -28,7 +29,8 @@ namespace WSMTXCA_SRV.Util
 
             _helvetica = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             compImp = comprobante;
-            int paginas = cantPaginas();
+            int topeItemsPagina = topePagina - (compImp.tipocomp > 200 ? 2 : 0);
+            int paginas = cantPaginas(topeItemsPagina);
 
             doc.AddTitle(comprobante.nrocomp.ToString());
             doc.AddCreator("Desarrollado por Andres Demarziani");
@@ -49,7 +51,7 @@ namespace WSMTXCA_SRV.Util
                         }
 
                         encabezado(i, p, paginas);
-                        detalle(p);
+                        detalle(p, topeItemsPagina);
 
                         if (p == paginas)
                         {
@@ -151,23 +153,23 @@ namespace WSMTXCA_SRV.Util
             imprimeTexto($"Transporte: {compImp.transporte}", tamfon1, Element.ALIGN_LEFT, left2, inicio);
         }
 
-        private static void detalle(int pagina)
+        private static void detalle(int pagina, int tope)
         {
             int index = 0;
+            bool tienePromo;
             float inicio = doc.PageSize.Height;
-            float[] widths = new float[] {  160f, /* 01-Descripcion*/
-                                            038f, /* 02-Bultos*/
-                                            019f, /* 03-(UM)*/
-                                            042f, /* 04-Cantidad*/
-                                            019f, /* 05-(UM)*/
-                                            048f, /* 06-Precio*/
-                                            048f, /* 07-Bonif*/
-                                            038f, /* 08-(Porc.)*/
-                                            048f, /* 09-Promo*/
-                                            038f, /* 10-(Porc. Promo)*/
-                                            050f, /* 11-IVA*/
-                                            036f, /* 12-(Porc. IVA)*/
-                                            050f  /* 13-Total*/  };
+            float[] widths = new float[] {  /*01*/ 065f, /*Articulo*/
+                                            /*02*/ 160f, /*Descripcion*/
+                                            /*03*/ 038f, /*Bultos*/
+                                            /*04*/ 019f, /*(UM)*/
+                                            /*05*/ 042f, /*Cantidad*/
+                                            /*06*/ 019f, /*(UM)*/
+                                            /*07*/ 048f, /*Precio*/
+                                            /*08*/ 048f, /*Bonif*/
+                                            /*09*/ 038f, /*(Porc.)*/
+                                            /*10*/ 048f, /*IVA*/
+                                            /*11*/ 038f, /*(Porc.)*/
+                                            /*12*/ 050f  /*Total*/  };
 
             PdfPTable table = new PdfPTable(widths.Length);
             PdfContentByte pcb = writer.DirectContent;
@@ -177,36 +179,37 @@ namespace WSMTXCA_SRV.Util
             descIva.Add(4, "10,5 %");
             descIva.Add(5, "21 %");
 
-            /*01*/ table.AddCell(cellEncabezado("Descripción", Element.ALIGN_LEFT));
-            /*02*/ table.AddCell(cellEncabezado("Bultos", Element.ALIGN_RIGHT));
-            /*03*/ table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
-            /*04*/ table.AddCell(cellEncabezado("Cant.", Element.ALIGN_RIGHT));
-            /*05*/ table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
-            /*06*/ table.AddCell(cellEncabezado("Precio", Element.ALIGN_RIGHT));
-            /*07*/ table.AddCell(cellEncabezado((compImp.impDescuento != 0 ? "Bonif.": " "), Element.ALIGN_RIGHT));
-            /*08*/ table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
-            /*09*/ table.AddCell(cellEncabezado((compImp.impDescuento != 0 ? "Promoción" : " "), Element.ALIGN_RIGHT));
-            /*10*/ table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
-            /*11*/ table.AddCell(cellEncabezado((Variables.DISC_IMPS || compImp.serie == "A" ? "IVA" : " "), Element.ALIGN_RIGHT));
-            /*12*/ table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
-            /*13*/ table.AddCell(cellEncabezado("Importe", Element.ALIGN_RIGHT));
+            table.AddCell(cellEncabezado("Articulo", Element.ALIGN_RIGHT));
+            table.AddCell(cellEncabezado("Descripción", Element.ALIGN_LEFT));
+            table.AddCell(cellEncabezado("Bultos", Element.ALIGN_RIGHT));
+            table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
+            table.AddCell(cellEncabezado("Cant.", Element.ALIGN_RIGHT));
+            table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
+            table.AddCell(cellEncabezado("Precio", Element.ALIGN_RIGHT));
+            table.AddCell(cellEncabezado((compImp.impDescuento != 0 ? "Bonif." : " "), Element.ALIGN_RIGHT));
+            table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
+            table.AddCell(cellEncabezado((Variables.DISC_IMPS || compImp.serie == "A" ? "IVA" : " "), Element.ALIGN_RIGHT));
+            table.AddCell(cellEncabezado(" ", Element.ALIGN_LEFT));
+            table.AddCell(cellEncabezado("Importe", Element.ALIGN_RIGHT));
 
             table.TotalWidth = 565f;
             table.SetWidths(widths);
 
             foreach (var item in compImp.detalles)
             {
-                if (nroPagina(index) == pagina)
+                tienePromo = item.porcPromo != 0 || item.promo != 0;
+                index += 1 + (tienePromo ? 1 : 0);
+
+                if (nroPagina(index, tope) == pagina)
                 {
+                    table.AddCell(cellItems(item.prod.codigo, Element.ALIGN_RIGHT));
                     table.AddCell(cellItems(item.prod.descrip));
                     table.AddCell(cellItems(item.bultos));
                     table.AddCell(cellItems(item.prod.unidadm2));
                     table.AddCell(cellItems(item.cantidad));
                     table.AddCell(cellItems(item.prod.unidadm1));
                     table.AddCell(cellItems(item.precioPdf));
-
-                    // Bonificacion
-                    if (item.porcBonif != 0)
+                    if (item.bonif != 0)
                     {
                         table.AddCell(cellItems(item.bonif));
                         table.AddCell(cellItems($"{item.porcBonif.ToString("N")}%"));
@@ -216,19 +219,6 @@ namespace WSMTXCA_SRV.Util
                         table.AddCell(cellItems(" "));
                         table.AddCell(cellItems(" "));
                     }
-
-                    // Promociones
-                    if (item.porcPromo != 0)
-                    {
-                        table.AddCell(cellItems(item.promo));
-                        table.AddCell(cellItems($"{item.porcPromo.ToString("N")}%"));
-                    }
-                    else
-                    {
-                        table.AddCell(cellItems(" "));
-                        table.AddCell(cellItems(" "));
-                    }
-
                     if (Variables.DISC_IMPS || compImp.serie == "A")
                     {
                         table.AddCell(cellItems(item.ivaPdf));
@@ -240,9 +230,24 @@ namespace WSMTXCA_SRV.Util
                         table.AddCell(cellItems(" "));
                     }
                     table.AddCell(cellItems(item.totalItem));
-                }
 
-                index++;
+                    // Agregamos promoción si existe
+                    if (tienePromo)
+                    {
+                        /*01*/ table.AddCell(cellItems(" "));                        
+                        /*02*/ table.AddCell(cellItems("*** PROMOCIÓN APLICADA ***"));
+                        /*03*/ table.AddCell(cellItems(" "));
+                        /*04*/ table.AddCell(cellItems(" "));
+                        /*05*/ table.AddCell(cellItems(" "));
+                        /*06*/ table.AddCell(cellItems(" "));
+                        /*07*/ table.AddCell(cellItems(" "));
+                        /*08*/ table.AddCell(cellItems(item.promo));
+                        /*09*/ table.AddCell(cellItems($"{item.porcPromo.ToString("N")}%"));
+                        /*10*/ table.AddCell(cellItems(" "));
+                        /*11*/ table.AddCell(cellItems(" "));
+                        /*12*/ table.AddCell(cellItems(" "));
+                    }
+                }
             }
 
             inicio -= 250f;
@@ -526,14 +531,19 @@ namespace WSMTXCA_SRV.Util
             return nuevoPath;
         }
 
-        private static int cantPaginas()
+        private static int cantPaginas(int tope)
         {
-            return ((int) compImp.detalles.Count() / topePagina) + 1;
+            int total = compImp.detalles.Count();
+
+            // Sumamos 1 por cada ítem con promoción
+            total += compImp.detalles.Count(item => item.porcPromo != 0 || item.promo != 0);
+
+            return (total / tope) + (total % tope == 0 ? 0 : 1);
         }
 
-        private static int nroPagina(int item)
+        private static int nroPagina(int item, int tope)
         {
-            return ((int) item / topePagina) + 1;
+            return ((int) item / tope) + 1;
         }
     }
 }
