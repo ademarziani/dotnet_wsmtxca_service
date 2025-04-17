@@ -543,7 +543,7 @@ namespace WSMTXCA_SRV.Util
 
         private static int nroPagina(int item, int tope)
         {
-            return ((int) item / tope) + 1;
+            return ((int) (item - 1) / tope) + 1;
         }
     }
 }
